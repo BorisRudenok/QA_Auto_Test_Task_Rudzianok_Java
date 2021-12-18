@@ -4,7 +4,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class TaskTwo {
-    private Scanner in = new Scanner(System.in);
+    private final Scanner in = new Scanner(System.in);
     private String name;
 
     public String inputName() {
@@ -18,11 +18,7 @@ public class TaskTwo {
     }
 
     public void checkName(String name) {
-        if (name.equalsIgnoreCase("Вячеслав")) {
-            System.out.println("Привет, Вячеслав");
-        } else {
-            System.out.println("Нет такого имени");
-        }
-
+        String massage = (name.equalsIgnoreCase("Вячеслав")) ? "Привет, Вячеслав" : "Нет такого имени";
+        System.out.println(massage);
     }
 }

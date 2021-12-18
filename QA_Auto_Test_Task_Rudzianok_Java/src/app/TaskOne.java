@@ -5,23 +5,24 @@ import java.util.Scanner;
 
 public class TaskOne {
     private Scanner in = new Scanner(System.in);
-    private float num;
+    private Float num;
 
-    public float inputNumber() {
+    public Float inputNumber() {
         System.out.println("Введите ваше число:");
         try {
             num = in.nextFloat();
         } catch (InputMismatchException e) {
-            System.out.println("вы ввели не число");
+            return num;
         }
         return num;
     }
 
-    public void checkNumber(float num) {
-        if (num > 7) {
-            System.out.println("Привет");
-        } else {
-            System.out.println("Вы ввели не чило либо веденное число равно или меньше 7");
+    public void checkNumber(Float num) {
+        try {
+            String massage = (num > 7) ? "Привет" : "Вы ввели число равно или меньше 7";
+            System.out.println(massage);
+        } catch (Exception e) {
+            System.out.println("Вы ввели не число");
         }
     }
 }

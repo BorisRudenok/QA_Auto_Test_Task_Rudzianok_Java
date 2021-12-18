@@ -1,12 +1,11 @@
 package app;
 
 
+import java.util.Arrays;
+
 public class TaskThree {
     public void checkArray(int[] inputArray) {
-        for (int j : inputArray) {
-            if (j % 3 == 0) {
-                System.out.println(j);
-            }
-        }
+        int[] resultArray = Arrays.stream(inputArray).filter(i -> i % 3 == 0).toArray();
+        System.out.println(Arrays.toString(resultArray));
     }
 }
